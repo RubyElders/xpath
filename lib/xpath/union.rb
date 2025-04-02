@@ -15,11 +15,11 @@ module XPath
       :union
     end
 
-    def each(&block)
-      arguments.each(&block)
+    def each(&)
+      arguments.each(&)
     end
 
-    def method_missing(*args) # rubocop:disable Style/MethodMissingSuper, Style/MissingRespondToMissing
+    def method_missing(*args) # rubocop:disable Style/MissingRespondToMissing
       XPath::Union.new(*arguments.map { |e| e.send(*args) })
     end
 

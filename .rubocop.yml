@@ -1,12 +1,15 @@
-require:
+plugins:
   - rubocop-rspec
   - rubocop-performance
-  
+
 AllCops:
   DisabledByDefault: false
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 3.1
+  NewCops: enable
+  SuggestExtensions: false
   Exclude:
       - 'xpath.gemspec'
+      - 'vendor/**/*'
 
 ##### New Cops #####
 
@@ -123,6 +126,9 @@ Style/Documentation:
 Style/EvenOdd:
   Enabled: false
 
+Style/QuotedSymbols:
+  Enabled: false
+
 Lint/BooleanSymbol:
   Enabled: false
 
@@ -147,5 +153,11 @@ RSpec/DescribedClass:
 RSpec/DescribeClass:
   Enabled: false
 
-RSpec/FilePath:
+RSpec/SpecFilePathFormat:
+  Enabled: false
+
+RSpec/SpecFilePathSuffix:
+  Enabled: false
+
+RSpec/MultipleExpectations:
   Enabled: false
